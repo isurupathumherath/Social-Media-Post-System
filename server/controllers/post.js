@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 const slugify = require('slugify');
 
-
+//Create Post
 exports.create = (req, res) => {
     // console.log(req.body);
 
@@ -41,4 +41,15 @@ exports.create = (req, res) => {
     // res.json({
     //     message: 'See your server console'
     // });
+};
+
+//Display All Post
+exports.list = (req, res) => {
+    Post.find({})
+        .limit(10)
+        .sort({ createdAt: -1})
+        .exec((err, posts) => {
+            if(err) console.log(err);
+            res.json(posts);
+        });
 };

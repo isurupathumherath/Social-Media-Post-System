@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import Nav from './Nav';
 
 const App = () => {
 
@@ -44,8 +45,13 @@ const App = () => {
 
   return (
     <div className="container p-5">
+      
+      <Nav />
+      <br />
+      
       <h1>CREATE POST</h1>
       <br/>
+      
       {/* {JSON.stringify(state)} */}
       <form onSubmit={handleSubmit}>
           <div className="form-group">

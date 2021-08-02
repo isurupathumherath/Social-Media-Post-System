@@ -20,7 +20,6 @@ exports.create = (req, res) => {
             return res.status(400).json({
                 error: 'Title is required'
             });
-            break;
         case !content:
             return res.status(400).json({
                 error: 'Content is required'

@@ -24,7 +24,6 @@ exports.create = (req, res) => {
             return res.status(400).json({
                 error: 'Content is required'
             });
-            break;
     }
 
     Post.create({title, content, user, slug}, (err, post) => {
@@ -53,3 +52,35 @@ exports.list = (req, res) => {
             res.json(posts);
         });
 };
+
+//Display One Post
+exports.read = (req, res) => {
+    const { slug } = req.params
+    console.log(req.params.slug)
+    Post.findOne({slug})
+        .exec((err, post) => {
+            if(err) console.log(err);
+            res.json(post);
+        });
+};
+
+//Update Post
+exports.update = (req, res) => {
+    const { slug } = req.params;
+    const {title, content, user} = req.body;
+    Post.findOneAndUpdate({slug}, {title, content, user}, {new: true}).exec((err, post) => {
+        if(err) console.log(err);
+        res.json(post);
+    }) 
+}
+
+//Delete Post
+exports.remove = (req, res) => {
+    const { slug } = req.params;
+    Post.findOneAndRemove({slug}).exec((err, post) => {
+        if(err) console.log(err);
+        res.json({
+            message: 'Post Deleted'
+        });
+    }) 
+}

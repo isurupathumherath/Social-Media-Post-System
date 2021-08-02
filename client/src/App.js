@@ -2,6 +2,8 @@ import React, { useState, useEffect} from 'react';
 import Nav from './Nav';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import c from './Create';
+import a from './Routes';
 
 const App = () => {
 

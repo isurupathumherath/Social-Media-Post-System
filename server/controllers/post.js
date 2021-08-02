@@ -24,7 +24,6 @@ exports.create = (req, res) => {
             return res.status(400).json({
                 error: 'Content is required'
             });
-            break;
     }
 
     Post.create({title, content, user, slug}, (err, post) => {
@@ -51,5 +50,16 @@ exports.list = (req, res) => {
         .exec((err, posts) => {
             if(err) console.log(err);
             res.json(posts);
+        });
+};
+
+//Display One Post
+exports.read = (req, res) => {
+    const { slug } = req.params
+    console.log(req.params.slug)
+    Post.findOne({slug})
+        .exec((err, post) => {
+            if(err) console.log(err);
+            res.json(post);
         });
 };

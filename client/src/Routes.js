@@ -4,7 +4,6 @@ import App from './App';
 import Create from "./Create";
 import SinglePost from './SinglePost';
 import UpdatePost from './UpdatePost';
-import c from 'components';
 
 
 const Routes =() => {

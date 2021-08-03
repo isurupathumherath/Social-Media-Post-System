@@ -34,6 +34,7 @@ const App = () => {
       .delete(`${process.env.REACT_APP_API}/post/${slug}`)
       .then(response => {
         alert(response.data.message);
+        fetchPosts();
       })
       .catch(error => alert('Error deleting post'));
   };

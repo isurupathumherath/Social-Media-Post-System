@@ -59,7 +59,6 @@ const App = () => {
                   </p>
                 </div>
               
-
               <div className="col-md-2">
                   <Link to={`/post/update/${post.slug}`} className="btn btn-sm btn-outline-warning">
                     Update

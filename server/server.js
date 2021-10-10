@@ -28,7 +28,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-// Route
+//Route
 // app.get('*', (req, res) => {
 //     res.json({
 //         data: 'You reached nodejs api for react node crud app'
